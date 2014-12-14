@@ -1,9 +1,10 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
 ---
+
+# Reproducible Research: Peer Assessment 1
 
 ##Introduction##
 It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the “quantified self” movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.
@@ -35,13 +36,6 @@ activity_data<-read.csv("activity.csv",na.strings="NA")
 
 ```r
 require(ggplot2)
-```
-
-```
-## Loading required package: ggplot2
-```
-
-```r
 steps_by_date<-aggregate(steps~date, data=activity_data,FUN=sum,na.rm=TRUE)
 qplot(steps_by_date$steps,binwidth=1000)+labs(x="Steps",y="Frequency")
 ```

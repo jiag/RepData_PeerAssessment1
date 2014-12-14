@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Loading and preprocessing the data</title>
+<title>Reproducible Research: Peer Assessment 1</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -201,6 +201,8 @@ hr {
 </head>
 
 <body>
+<h1>Reproducible Research: Peer Assessment 1</h1>
+
 <p>##Introduction##
 It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the “quantified self” movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.</p>
 
@@ -230,12 +232,7 @@ activity_data&lt;-read.csv(&quot;activity.csv&quot;,na.strings=&quot;NA&quot;)
 <h2>What is mean total number of steps taken per day?</h2>
 
 <pre><code class="r">require(ggplot2)
-</code></pre>
-
-<pre><code>## Loading required package: ggplot2
-</code></pre>
-
-<pre><code class="r">steps_by_date&lt;-aggregate(steps~date, data=activity_data,FUN=sum,na.rm=TRUE)
+steps_by_date&lt;-aggregate(steps~date, data=activity_data,FUN=sum,na.rm=TRUE)
 qplot(steps_by_date$steps,binwidth=1000)+labs(x=&quot;Steps&quot;,y=&quot;Frequency&quot;)
 </code></pre>
 
